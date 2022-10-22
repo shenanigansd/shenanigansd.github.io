@@ -1,0 +1,5 @@
+# JetBrains
+.idea
+
+# Hugo
+.hugo_build.lock
