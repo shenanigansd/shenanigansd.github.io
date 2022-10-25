@@ -42,3 +42,6 @@ enabled = true
 title = "Hi, I'm Bradley"
 subtitle = "I'm just a dog trying to help people out"
 imageUrl = "/profile-image.jpeg"
+
+[params.assets]
+disableFingerprinting = true
