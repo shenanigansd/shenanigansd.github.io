@@ -11,7 +11,7 @@ enableRobotsTXT = true
 paginate = 15
 
 [params]
-description = "Bradley Reynolds' blog"
+description = "Bradley Reynolds' site"
 defaultTheme = "auto"
 showReadingTime = true
 showCodeCopyButtons = true
