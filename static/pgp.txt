@@ -1,7 +1,7 @@
 -----BEGIN PGP PUBLIC KEY BLOCK-----
-Comment: User-ID:	     Bradley Reynolds <bradley.reynolds@darbia.dev>
-Comment: Valid from:	 8/16/2023 8:25 PM
-Comment: Fingerprint:	 C38E4D14EA784EF450302C0412A438A66B2BDEFF
+Comment: User-ID:	Bradley Reynolds <bradley.reynolds@darbia.dev>
+Comment: Valid from:	8/16/2023 8:25 PM
+Comment: Fingerprint:	C38E4D14EA784EF450302C0412A438A66B2BDEFF
 
 
 mDMEZN12/hYJKwYBBAHaRw8BAQdA99huQYpRd+vYJFbqpwfItivZwnsubNE3El9S
