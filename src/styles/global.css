@@ -1,6 +1,15 @@
 html {
-    background-color: #f1f5f9;
+    background-color: #f8fafc;
     font-family: sans-serif;
+}
+
+html.dark {
+    background-color: #020617;
+    color: #fff;
+}
+
+.dark .nav-links a {
+    color: #fff;
 }
 
 body {
@@ -80,13 +89,4 @@ h1 {
     .hamburger {
         display: none;
     }
-}
-
-html.dark {
-    background-color: #0d0950;
-    color: #fff;
-}
-
-.dark .nav-links a {
-    color: #fff;
 }

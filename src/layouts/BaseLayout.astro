@@ -15,13 +15,13 @@ const { pageTitle } = Astro.props;
         <title>{pageTitle}</title>
         <ViewTransitions />
         <script>
-            import { injectSpeedInsights } from '@vercel/speed-insights';
+            import { injectSpeedInsights } from "@vercel/speed-insights";
             injectSpeedInsights({});
         </script>
     </head>
     <body>
         <Header />
-        <h1 transition:animate="slide">{pageTitle}</h1>
+        <h1>{pageTitle}</h1>
         <slot />
         <Footer />
         <script>
