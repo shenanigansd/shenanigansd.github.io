@@ -1,0 +1,45 @@
+---
+import Footer from "../components/Footer.astro";
+
+interface PageProps {
+    title: string;
+    description?: string;
+    hideTitle?: boolean;
+}
+
+interface Props extends PageProps {
+    frontmatter?: PageProps;
+}
+
+const { title, description, hideTitle } =
+    Astro.props.frontmatter || Astro.props;
+
+const DEFAULT_DESCRIPTION =
+    "Hi, I'm Bradley, a DevOps Engineer and internet dog";
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="description"
+            content={description ? description : DEFAULT_DESCRIPTION}
+        />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+        <meta name="generator" content={Astro.generator} />
+        <meta name="theme-color" content="#616283" />
+        <meta name="og:title" content={`${title} • Bradley Reynolds`} />
+        <title>{title} • Bradley Reynolds</title>
+    </head>
+    <body>
+        <main>
+            {hideTitle ? null : <h1 class="page-header">{title}</h1>}
+
+            <slot />
+        </main>
+        <div class="body-sep"></div>
+        <Footer />
+    </body>
+</html>
