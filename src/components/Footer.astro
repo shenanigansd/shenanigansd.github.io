@@ -1,0 +1,45 @@
+---
+const GITHUB_LINK = "https://github.com/shenanigansd/shenanigansd.github.io";
+
+import * as childProcess from "child_process";
+
+const hash = childProcess
+    .execSync("git rev-parse --short HEAD")
+    .toString()
+    .trim();
+---
+
+<footer>
+    <span
+        >&copy; 2024 &bull; Built by Bradley and 🐶 &bull; <a
+            href={GITHUB_LINK}>View on GitHub</a
+        > &bull; <code>{hash}</code></span
+    >
+</footer>
+
+<style>
+    footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        background-color: var(--color-bg);
+        color: var(--color-text);
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+    .spacer {
+        flex: 1;
+    }
+
+    footer a {
+        color: var(--color-text);
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    footer a:hover {
+        text-decoration: underline;
+    }
+</style>
