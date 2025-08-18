@@ -11,12 +11,12 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "@sentry/astro": "^8.41.0",
-    "@spotlightjs/astro": "^2.1.15",
-    "astro": "^4.16.16",
-    "typescript": "^5.7.2"
+    "@sentry/astro": "^10.0.0",
+    "@spotlightjs/astro": "^3.2.5",
+    "astro": "^5.12.7",
+    "typescript": "^5.9.2"
   },
   "devDependencies": {
-    "@types/node": "^22.10.1"
+    "@types/node": "^24.1.0"
   }
 }
