@@ -1,6 +1,49 @@
 ---
-import Layout from "../layouts/Layout.astro";
+const GITHUB_LINK = "https://github.com/shenanigansd/shenanigansd.github.io";
+
+import * as childProcess from "child_process";
+
+const hash = childProcess.execSync("git rev-parse HEAD").toString().trim();
 ---
 
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>
+		<h1>Astro</h1>
+		<footer>
+			<span>
+				🐶 &bull; <a href={GITHUB_LINK}>View on GitHub</a>
+				&bull; <code>{hash}</code>
+			</span>
+		</footer>
 
-<Layout title="Home" hideTitle></Layout>
+		<style>
+			footer {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 50px;
+				background-color: var(--color-bg);
+				color: var(--color-text);
+				font-size: 0.9rem;
+				text-align: center;
+			}
+
+			footer a {
+				color: var(--color-text);
+				text-decoration: none;
+				font-weight: bold;
+			}
+
+			footer a:hover {
+				text-decoration: underline;
+			}
+		</style>
+	</body>
+</html>
