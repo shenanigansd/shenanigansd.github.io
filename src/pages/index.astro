@@ -1,9 +1,5 @@
 ---
 const GITHUB_LINK = "https://github.com/shenanigansd/shenanigansd.github.io";
-
-import * as childProcess from "node:child_process";
-
-const hash = childProcess.execSync("git rev-parse HEAD").toString().trim();
 ---
 
 <html lang="en">
@@ -19,7 +15,7 @@ const hash = childProcess.execSync("git rev-parse HEAD").toString().trim();
 		<footer>
 			<span>
 				🐶 &bull; <a href={GITHUB_LINK}>View on GitHub</a>
-				&bull; <code>{hash}</code>
+				&bull; <code>{__GIT_COMMIT_HASH__}</code>
 			</span>
 		</footer>
 
