@@ -1,9 +1,5 @@
 ---
-const GITHUB_LINK = "https://github.com/shenanigansd/shenanigansd.github.io";
-
-import * as childProcess from "node:child_process";
-
-const hash = childProcess.execSync("git rev-parse HEAD").toString().trim();
+import { REPO_URL } from "@/constants";
 ---
 
 <html lang="en">
@@ -18,8 +14,8 @@ const hash = childProcess.execSync("git rev-parse HEAD").toString().trim();
 		<h1>Astro</h1>
 		<footer>
 			<span>
-				🐶 &bull; <a href={GITHUB_LINK}>View on GitHub</a>
-				&bull; <code>{hash}</code>
+				🐶 &bull; <a href={REPO_URL}>View on GitHub</a>
+				&bull; <code>{__GIT_COMMIT_HASH__}</code>
 			</span>
 		</footer>
 
