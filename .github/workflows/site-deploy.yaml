@@ -1,4 +1,4 @@
-name: "Deploy to GitHub Pages"
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -13,12 +13,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: "Checkout repository"
+      - name: Checkout repository
         uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
         with:
           fetch-depth: 0
 
-      - name: "Install, build, and upload your site"
+      - name: Install, build, and upload your site
         uses: withastro/action@fc88a7002f0c62327f26fb1b15f2a1d581249278 # v5.1.0
 
   deploy:
@@ -34,6 +34,6 @@ jobs:
       id-token: write
 
     steps:
-      - name: "Deploy to GitHub Pages"
+      - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4.0.5
