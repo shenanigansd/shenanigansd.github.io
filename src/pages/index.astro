@@ -1,5 +1,5 @@
 ---
-const GITHUB_LINK = "https://github.com/shenanigansd/shenanigansd.github.io";
+import { REPO_URL } from "@/constants";
 ---
 
 <html lang="en">
@@ -14,7 +14,7 @@ const GITHUB_LINK = "https://github.com/shenanigansd/shenanigansd.github.io";
 		<h1>Astro</h1>
 		<footer>
 			<span>
-				🐶 &bull; <a href={GITHUB_LINK}>View on GitHub</a>
+				🐶 &bull; <a href={REPO_URL}>View on GitHub</a>
 				&bull; <code>{__GIT_COMMIT_HASH__}</code>
 			</span>
 		</footer>
