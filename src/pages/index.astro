@@ -1,45 +1,84 @@
 ---
-import { REPO_URL } from "@/constants";
+import { Image } from "astro:assets";
+import headshot from "@/images/headshot.jpg";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const pageTitle = "Howdy";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-		<footer>
-			<span>
-				🐶 &bull; <a href={REPO_URL}>View on GitHub</a>
-				&bull; <code>{__GIT_COMMIT_HASH__}</code>
-			</span>
-		</footer>
+<BaseLayout pageTitle={pageTitle}>
+    <section class="hero">
+        <div class="headshot-container">
+            <Image
+                class="nav-icon"
+                src={headshot}
+                alt="Gracie the dog and Bradley the human"
+                quality="max"
+                width="256"
+                height="256"
+                densities={[1.5, 2]}
+                loading="eager"
+            />
+        </div>
+        <div class="intro-text">
+            <p class="lead">Of course you can pet her! Her name is Gracie.</p>
+            <p class="mb-4">
+                Now that I've got your attention, hi, my name is <strong>Bradley</strong>. 
+            </p>
+        </div>
+    </section>
 
-		<style>
-			footer {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				height: 50px;
-				background-color: var(--color-bg);
-				color: var(--color-text);
-				font-size: 0.9rem;
-				text-align: center;
-			}
+    <section class="content">
+        <h2 id="shenanigans">Latest Shenanigans</h2>
+        <ul>
+            <li><a href="/posts/post-1">Astro tutorial blog post</a></li>
+        </ul>
+    </section>
+</BaseLayout>
 
-			footer a {
-				color: var(--color-text);
-				text-decoration: none;
-				font-weight: bold;
-			}
+<style>
+    .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        margin-bottom: 3rem;
+        text-align: center;
+    }
 
-			footer a:hover {
-				text-decoration: underline;
-			}
-		</style>
-	</body>
-</html>
+    @media (min-width: 640px) {
+        .hero {
+            flex-direction: row;
+            text-align: left;
+            align-items: center;
+        }
+    }
+
+    .headshot-container img {
+        border-radius: 50%;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        display: block;
+    }
+
+    .lead {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: var(--text-color);
+        line-height: 1.3;
+    }
+    
+    .mb-4 {
+        margin-bottom: 1.5rem;
+    }
+
+    .content {
+        margin-top: 2rem;
+    }
+    
+    .content h2 {
+        border-bottom: 2px solid #eee;
+        padding-bottom: 0.5rem;
+        margin-top: 2rem;
+    }
+</style>

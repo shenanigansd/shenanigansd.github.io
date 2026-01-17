@@ -1,0 +1,26 @@
+---
+import { GIT_COMMIT_HASH, REPO_URL } from "@/constants";
+---
+
+<footer>
+    <span>
+        🦴 <a href={`${REPO_URL}/commit/${GIT_COMMIT_HASH}`}>
+            {GIT_COMMIT_HASH}
+        </a> 🐕‍🦺
+    </span>
+</footer>
+
+<style>
+    footer {
+        text-align: center;
+        font-size: 0.8rem;
+        margin-top: 3rem;
+    }
+
+    footer a {
+        color: var(--text-color);
+        text-decoration: none;
+        font-style: italic;
+        text-decoration: underline;
+    }
+</style>

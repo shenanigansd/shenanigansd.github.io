@@ -1,0 +1,132 @@
+---
+import { Image } from "astro:assets";
+import headshot from "@/images/headshot.jpg";
+---
+<header>
+    <a href="/" class="logo-link">
+        <Image src={headshot} alt="Bradley's Headshot" width={48} height={48} class="header-icon" />
+    </a>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/now">Now</a></li>
+        </ul>
+    </nav>
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+    </button>
+</header>
+
+<script is:inline>
+    const theme = (() => {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+            return localStorage.getItem('theme');
+        }
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            return 'dark';
+        }
+        return 'light';
+    })();
+
+    if (theme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+    } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+
+    window.localStorage.setItem('theme', theme);
+
+    const handleToggleClick = () => {
+        const element = document.documentElement;
+        const isDark = element.getAttribute("data-theme") === "dark";
+        const newTheme = isDark ? "light" : "dark";
+        element.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+    }
+
+    document.getElementById("theme-toggle").addEventListener("click", handleToggleClick);
+</script>
+
+<style>
+    header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        padding-bottom: 2rem;
+        margin: 0 auto 2rem auto;
+        max-width: 800px;
+        width: 100%;
+    }
+    
+    .logo-link {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: inherit;
+        /* Ensure logo keeps size even if flex tries to squash (though images usually don't) */
+        flex-shrink: 0;
+    }
+  
+    #theme-toggle {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--text-color);
+        padding: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: background-color 0.2s;
+        flex-shrink: 0;
+    }
+    
+    #theme-toggle:hover {
+        background-color: rgba(128, 128, 128, 0.1);
+    }
+
+    .sun { display: none; }
+    .moon { display: block; }
+    
+    :global([data-theme="dark"]) .sun { display: block; }
+    :global([data-theme="dark"]) .moon { display: none; }
+
+    :global(.header-icon) {
+        border-radius: 50%;
+        display: block;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    nav a {
+        color: var(--text-color, #333);
+        text-decoration: none;
+        font-weight: 500;
+        white-space: nowrap;
+    }
+
+    nav a:hover {
+        color: var(--accent-color, #0056b3);
+    }
+</style>
