@@ -1,0 +1,18 @@
+{
+  "name": "shenanigansd-dog",
+  "compatibility_date": "2026-04-10",
+  "version_metadata": {
+    "binding": "CF_VERSION_METADATA"
+  },
+  "assets": {
+    "binding": "ASSETS",
+    "directory": "./dist/client"
+  },
+  "routes": [
+    {
+      "pattern": "idinet.impressdesigns.com",
+      "custom_domain": true
+    }
+  ],
+  "preview_urls": true
+}
