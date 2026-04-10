@@ -19,7 +19,7 @@ jobs:
           fetch-depth: 0
 
       - name: Install, build, and upload your site
-        uses: withastro/action@15aa0a5a1e067940253e3b259413ab2ae882a740 # v5.2.0
+        uses: withastro/action@44706356b4eb735f8b9035699eb4796241a040c4 # v6.1.0
 
   deploy:
     if: ${{ github.ref == 'refs/heads/main' }}
