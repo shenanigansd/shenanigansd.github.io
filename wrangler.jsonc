@@ -9,7 +9,7 @@
   },
   "routes": [
     {
-      "pattern": "shenanigansd.dog",
+      "pattern": "shenanigans.dog",
       "custom_domain": true
     }
   ],
