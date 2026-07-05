@@ -18,7 +18,7 @@ export default defineWorker({
       invocationLogs: true,
     },
     traces: {
-      enabled: false,
+      enabled: true,
       persist: true,
       headSamplingRate: 1,
     },
