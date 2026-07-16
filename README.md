@@ -1,3 +1,2 @@
-# shenanigans.dog
+# My personal site
 
-My personal site
