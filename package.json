@@ -12,7 +12,7 @@
     "astro": "^7.2.4"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.5.9",
+    "@biomejs/biome": "2.5.10",
     "wrangler": "^4.125.0"
   },
   "engines": {
